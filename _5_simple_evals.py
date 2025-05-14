@@ -1,5 +1,9 @@
 from typing import Any, Callable
-from agents import Agent, Runner, function_tool
+from agents import Agent, Runner, function_tool, set_tracing_disabled
+
+set_tracing_disabled(True)
+
+# Agent Under Test
 
 
 @function_tool
@@ -13,6 +17,8 @@ calc_agent = Agent(
     instructions="If asked for arithmetic call `add`, else greet politely.",
     tools=[add],
 )
+
+# Evals Setup
 
 
 def llm_judge(criteria: str) -> Callable[[str, str], bool]:
@@ -44,7 +50,7 @@ def run_eval(
 
 TESTS = [
     ("What is 2+3? Respond with ONLY the number", "5"),
-    ("hello", "Hello! How can I help you today?"),
+    ("hello", "Hello! How friend can I help you today?"),
     ("What is the capital of France?", "Paris", llm_judge("semantic similarity")),
 ]
 
