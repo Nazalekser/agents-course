@@ -92,7 +92,7 @@ memory_agent_2 = Agent(
     name="Memory Manager 2",
     instructions="Help users save and query their memories.",
     tools=[save_memory, query_memory],
-    model="gpt-4.1",
+    model="gpt-3.5-turbo",
 )
 
 
@@ -119,7 +119,7 @@ memory_agent_1 = Agent(
     name="Memory Manager 1",
     instructions="Help search through files.",
     tools=[FileSearchTool(vector_store_ids=[get_vector_store_id()])],
-    model="gpt-4.1",
+    model="gpt-3.5-turbo",
 )
 
 
