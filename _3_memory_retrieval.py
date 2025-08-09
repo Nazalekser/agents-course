@@ -119,7 +119,7 @@ memory_agent_1 = Agent(
     name="Memory Manager 1",
     instructions="Help search through files.",
     tools=[FileSearchTool(vector_store_ids=[get_vector_store_id()])],
-    model="gpt-3.5-turbo",
+    model="gpt-4o",  # ← спробуйте цю модель
 )
 
 
